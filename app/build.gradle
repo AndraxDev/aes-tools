@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+	compileSdkVersion 33
+	
+	defaultConfig {
+		applicationId "com.teslasoft.security.aes"
+		minSdkVersion 27
+		targetSdkVersion 33
+		versionCode 4
+		versionName "1.4"
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled true
+			shrinkResources true
+			debuggable false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+	
+	namespace 'com.teslasoft.security.aes'
+}
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation 'com.google.android.material:material:1.7.0'
+}
